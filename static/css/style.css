@@ -1,0 +1,116 @@
+/*
+
+Comment
+*******************/
+
+.content{
+    max-width: 600px;
+    height: 100%;
+    margin:0 auto;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    
+
+}
+/*
+Post
+*******************/
+
+.app_form{
+    padding: 20PX 40PX;
+    border-bottom: 1PX solid#ccc;
+
+
+}
+.app_form input{
+    width: 70%;
+    margin-bottom: 10px;
+    padding:10px;
+    border: 1px solid #ccc;
+
+
+
+}
+
+.app_form textarea {
+    width:70%;
+    padding:10px;
+    border: 1px solid #ccc;
+
+
+}
+
+
+.apps ul {
+    padding:0;
+}
+
+html,
+body{
+    height:100%;
+}
+
+.apps li{
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding:20px 40px;
+    list-style: none;
+    position: relative;
+
+
+}
+
+.apps li .menu_icon{
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+
+
+}
+
+.apps li .logo{
+    text-decoration: none;
+}
+
+.apps li .menu{
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 3px;
+
+
+
+}
+.apps li .logo{
+    flex-basis: 15%;
+
+}
+
+.apps li .logo img{
+    width: 60%;
+}
+.apps li .name_body{
+    flex-basis: 85%;
+}
+
+.apps li .name_body .name{
+    font-weight: bold;
+}
+
+.apps li .name_body .datetime{
+    color:gray;
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .apps li .name_body .name{
+        font-style: 40px;
+    }
+}
+    

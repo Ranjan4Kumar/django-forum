@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+
+
+<section class='content'>
+    <section class='app_form'>
+        <form action="/" method="POST">
+            <input type"text" name = "name" placeholder="Name" required>
+            <textarea name = "body" placeholder="Tell us anything" required></textarea>
+            <input type="submit" value="Post" />
+            {% csrf_token %}
+
+        </form>
+    </section>
+    <section class='apps'>
+        <ul>
+            {% for app in app_1 %}
+            <li>
+                <img class="menu_icon" src="{%static 'img/menu.png'%}" />
+                <div class="menu">
+                    <a href="/delete/{{app.id}}">delete</a>
+
+                <div class = "logo">
+
+                    <img src="{% static 'img/user.png' %} "/>
+
+                </div>
+                <div class = "name_body">
+
+                    <div class='name'> {{app.name}} </div>
+                    <div class='datetime'> {{app.created_at}}<div />
+                    <p>{{app.body}} </p>
+                    <a href= "/delete/{{ app.id }}">delete</a>
+
+            </div>
+        </li>
+        {% endfor %}
+        <ul>
+    </section>
+
+
+</section>
+<script
+{% endblock %}
