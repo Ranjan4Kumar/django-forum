@@ -74,6 +74,7 @@ body{
 }
 
 .apps li .menu{
+   /* display: none; */
     position: absolute;
     top: 40px;
     right: 15px;
@@ -85,6 +86,10 @@ body{
 
 
 
+}
+
+.apps li .menu a{
+    text-decoration: none;
 }
 .apps li .logo{
     flex-basis: 15%;
