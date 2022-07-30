@@ -1,4 +1,5 @@
 from http.client import HTTPResponse
+from traceback import format_exception_only
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import App
@@ -42,6 +43,27 @@ def delete(request, post_id):
     post = App.objects.get(id=post_id)
     post.delete()
     return HttpResponseRedirect('/')
+    output = 'POST ID IS' +str(post_id)
+    return HttpResponse(output)
 
 
-# Create your views here.
+def edit(request, post_id):
+    app_1 = App.objects.get(id = post_id)
+
+
+    if request.method == 'POST':
+
+        form = PostForm(request.POST,instance=post_id)
+
+
+        if form .is_valid():
+            form.save()
+
+            return HttpResponseRedirect('/')
+        else:
+            return HttpResponseRedirect("not valid")
+   
+
+
+
+

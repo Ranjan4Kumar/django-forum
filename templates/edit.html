@@ -1,27 +1,37 @@
 {% extends "base.html"%} {% block content %} {% load static %}
 <section class="content">
-    <div class="main-header">
-        <img src="{% static 'img/Twitter.jpeg' %}" class="logo" />
-        <h1>EDIT</h1>
-    </div>
-    <section class="post_formm">
-        <form action="/edit/{{app.id}}/" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <input class="inputt" type="text" name="name" placeholder="Name" value="{{app.name}}" required />
-            <input row="3" class="texxtarea" type="text" name="body" value="{{app.body}}" ></textarea>
-            <label for="{{app.name}}"></label>
-            {% if app.image.url %}
-            <img class="post-border" src="{{ app.image.url }}" />
-            {% endif %}
-            <div class="flex">
-                <input class="inputimage" name="image" type="file" />
-                <div class="b1">
-                    <a class="cancel-button" href="{%  url 'index' %}">Cancel</a>
-                    <input class="update-button" type="submit" value="Update" />
-                </div>
-            </div>
-        </form>
-    </section>
+  <!-- We will twitter png here and header with edit-->
+  <section class="app_form">
+    <form
+      action="/edit/{{app.id}}/"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      {% csrf_token %} <input type"text" name = "name" placeholder="Name"
+      required>
+      <textarea name="body" placeholder="Tell us anything" required></textarea>
+      <label for="{{app.name}}"></label>
+
+      {%% if app.image.url %%}
+      <img class="post-border" src="{{app.image.url}}" />
+      {% endif%}
+      <div class="flex">
+        <input class="inputimage" name="image" type="file" />
+
+        <div class="b1">
+          <a class="cancle-button" href="{% url 'index' %}">Cancel</a>
+          <input class="update-buttton" type="submit" , value="Update" />
+        </div>
+      </div>
+    </form>
+  </section>
 </section>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"
+></script>
+
+<script src="{% static 'js/app.js' %}"></script>
 
 {% endblock %}

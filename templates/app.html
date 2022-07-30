@@ -2,11 +2,20 @@
 
 
 <section class='content'>
+
+<!--  We will add twitter image and we will add home in h1 tag here-->
+
+
     <section class='app_form'>
         <form action="/" method="POST">
+
+
+
             <input type"text" name = "name" placeholder="Name" required>
-            <textarea name = "body" placeholder="Tell us anything" required></textarea>
-            <input type="submit" value="Post" />
+            <textarea name = "body" placeholder="Post anything" required></textarea>
+
+            <div class="tweet">
+                <button type='submit', value="Tweet">Tweet</button>
             {% csrf_token %}
 
         </form>
@@ -17,14 +26,17 @@
             <li>
                 <img class="menu_icon js-menu-icon" src="{%static 'img/menu.png'%}" />
                 <div class="menu">
-                    <a href="/delete/{{app.id}}">delete</a>
+                    <a href="/delete/{{app.id}}">delete</a><br>
+                    <a href="/edit/{{app.id}}">Edit</a>
                 </div>
+                
 
                 <div class = "logo">
-
                     <img src="{% static 'img/user.png' %} "/>
-
                 </div>
+
+
+
                 <div class = "name_body">
 
                     <div class='name'> {{app.name}} </div>
